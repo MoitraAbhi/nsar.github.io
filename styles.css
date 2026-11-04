@@ -1,0 +1,818 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.section-tag {
+    display: none;
+}
+
+/* Barra de Navegación */
+.navbar {
+    border-bottom: 1px solid #e2e8f0;
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 15px 60px;
+}
+
+.nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 40px; 
+}
+
+.logo {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.lab-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #981e32; /* WSU Crimson */
+}
+
+.uni-title {
+    font-size: 0.75rem;
+    color: #5e6a71; /* WSU Gray */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.uni-title {
+    font-size: 0.75rem;
+    color: #5e6a71; /* WSU Gray */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #5e6a71;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #981e32;
+    border-bottom: 2px solid #981e32;
+    padding-bottom: 4px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.wsu-logo {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+}
+
+
+.main-content {
+    width: 100%;
+    max-width: 100%; 
+    padding: 40px 60px; 
+    margin: 0;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.page-title {
+    font-size: 2.8rem;
+    color: #1a1a1a;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+
+.home-section {
+    margin-bottom: 40px;
+}
+
+.section-heading {
+    font-size: 1.6rem;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #981e32;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.home-intro {
+    background-color: #f8f9fa;
+    border-left: 4px solid #981e32;
+    padding: 25px 30px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.intro-text {
+    font-size: 1.15rem;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.intro-text strong {
+    color: #981e32;
+}
+
+/* Lista de Noticias */
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.news-item {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    padding: 12px 15px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border-left: 3px solid #5e6a71;
+    transition: border-left-color 0.2s ease, transform 0.2s ease;
+}
+
+.news-item:hover {
+    border-left-color: #981e32;
+    transform: translateX(4px);
+}
+
+.news-date {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #981e32;
+    min-width: 75px;
+}
+
+.news-text {
+    font-size: 0.95rem;
+    color: #333333;
+}
+
+
+.pi-card {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+.pi-photo {
+    width: 240px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.pi-info {
+    text-align: left;
+}
+
+.pi-info h2 {
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.pi-role {
+    color: #5e6a71;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.pi-bio {
+    color: #4a5568;
+    font-size: 0.98rem;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background-color: #e2e8f0;
+    margin: 40px 0;
+}
+
+
+.group-section {
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+.group-section h2 {
+    font-size: 1.5rem;
+    color: #981e32;
+    border-bottom: 2px solid #981e32;
+    display: inline-block;
+    padding-bottom: 4px;
+    margin-bottom: 25px;
+}
+
+
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 220px));
+    gap: 20px;
+    justify-content: start;
+}
+
+
+.student-card-vertical {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-top: 3px solid #981e32;
+    padding: 15px;
+    text-align: left;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.student-card-vertical:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+.student-photo-vertical {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.student-info-vertical h3 {
+    font-size: 1.05rem;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+.student-info-vertical .role {
+    font-size: 0.8rem;
+    color: #981e32;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.student-info-vertical .bio {
+    font-size: 0.82rem;
+    color: #5e6a71;
+    line-height: 1.35;
+}
+
+
+.research-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.research-card {
+    background-color: #f8f9fa;
+    border-left: 4px solid #981e32;
+    padding: 25px 30px;
+    border-radius: 6px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.research-card:hover {
+    transform: translateX(6px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.research-card h2 {
+    font-size: 1.4rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.research-card p {
+    color: #5e6a71;
+    font-size: 0.98rem;
+    line-height: 1.5;
+}
+
+
+.footer {
+    background-color: #4a5568; 
+    color: #ffffff;           
+    padding: 40px 0;
+    margin-top: 60px;
+    border-top: 3px solid #981e32; 
+}
+
+.footer-container {
+    max-width: 100%;
+    padding: 0 60px;
+    margin: 0;
+    text-align: left;
+}
+
+.footer-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.footer-slogan {
+    font-size: 0.95rem;
+    color: #e2e8f0; 
+    margin-bottom: 12px;
+}
+
+.footer-container p {
+    font-size: 0.9rem;
+    color: #cbd5e0; 
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    .main-content, .footer-container {
+        margin: 20px;
+    }
+    .pi-card {
+        flex-direction: column;
+    }
+    .pi-photo {
+        width: 100%;
+        height: auto;
+    }
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+.home-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 30px; 
+    align-items: start;
+    width: 100%;
+}
+
+
+.right-content {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; 
+}
+
+.image-slider {
+    position: relative;
+    width: 100%;
+    max-width: 100%; 
+    height: 380px;    
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    border-top: 4px solid #981e32;
+}
+
+
+.slide-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeSlider 15s infinite;
+}
+
+
+.img-1 { animation-delay: 0s; }
+.img-2 { animation-delay: 5s; }
+.img-3 { animation-delay: 10s; }
+
+
+@keyframes fadeSlider {
+    0% { opacity: 0; }
+    10% { opacity: 1; }  
+    33% { opacity: 1; }  
+    43% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+
+@media (max-width: 850px) {
+    .home-layout {
+        grid-template-columns: 1fr;
+    }
+    .image-slider {
+        height: 250px;
+    }
+}
+
+.pub-intro {
+    font-size: 1.1rem;
+    color: #5e6a71;
+    margin-bottom: 40px;
+    max-width: 900px;
+}
+
+
+.pub-year-section {
+    margin-bottom: 45px;
+}
+
+.year-heading {
+    font-size: 1.8rem;
+    color: #981e32; 
+    border-bottom: 2px solid #981e32;
+    display: inline-block;
+    padding-bottom: 4px;
+    margin-bottom: 20px;
+}
+
+.pub-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.pub-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px 25px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #5e6a71; 
+    transition: border-left-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pub-item:hover {
+    border-left-color: #981e32; 
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+
+.pub-badge-container {
+    min-width: 100px;
+}
+
+.pub-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.pub-badge.conference {
+    background-color: #981e32; 
+    color: #ffffff;
+}
+
+.pub-badge.journal {
+    background-color: #5e6a71; 
+    color: #ffffff;
+}
+
+
+.pub-details {
+    flex-grow: 1;
+}
+
+.pub-title {
+    font-size: 1.15rem;
+    color: #1a1a1a;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.35;
+}
+
+.pub-authors {
+    font-size: 0.95rem;
+    color: #4a5568;
+    margin-bottom: 6px;
+}
+
+.pub-venue {
+    font-size: 0.9rem;
+    color: #5e6a71;
+    margin-bottom: 12px;
+}
+
+/* link buttons (PDF, BibTeX, DOI, Code) */
+.pub-links {
+    display: flex;
+    gap: 10px;
+}
+
+.pub-btn {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #981e32;
+    border: 1px solid #981e32;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pub-btn:hover {
+    background-color: #981e32;
+    color: #ffffff;
+}
+
+.pub-btn.code-btn {
+    color: #5e6a71;
+    border-color: #5e6a71;
+}
+
+.pub-btn.code-btn:hover {
+    background-color: #5e6a71;
+    color: #ffffff;
+}
+
+/* Adaptación Responsive para Móviles */
+@media (max-width: 850px) {
+    .pub-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+/* ==========================================
+    Join Us
+   ========================================== */
+
+.join-intro {
+    font-size: 1.1rem;
+    color: #4a5568;
+    margin-bottom: 35px;
+    line-height: 1.6;
+    max-width: 950px;
+}
+
+.positions-section {
+    margin-bottom: 45px;
+}
+
+.position-card {
+    background-color: #f8f9fa;
+    border-left: 4px solid #981e32;
+    padding: 25px 30px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.position-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.position-header h3 {
+    font-size: 1.3rem;
+    color: #1a1a1a;
+}
+
+.pos-badge {
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border-radius: 4px;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.pos-badge.phd {
+    background-color: #981e32; /* Crimson WSU */
+}
+
+.pos-badge.ms {
+    background-color: #5e6a71; /* Gray WSU */
+}
+
+.pos-desc {
+    font-size: 0.98rem;
+    color: #4a5568;
+    margin-bottom: 15px;
+}
+
+.pos-requirements {
+    font-size: 0.92rem;
+    color: #5e6a71;
+}
+
+.pos-requirements ul {
+    margin-top: 8px;
+    padding-left: 20px;
+}
+
+.pos-requirements li {
+    margin-bottom: 4px;
+}
+
+
+.guidelines-box {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 25px 30px;
+    margin-top: 15px;
+}
+
+.subject-format {
+    background-color: #f1f5f9;
+    border-left: 3px solid #5e6a71;
+    padding: 12px 18px;
+    border-radius: 4px;
+    margin: 20px 0;
+}
+
+.format-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #981e32;
+    margin-bottom: 4px;
+}
+
+.subject-format code {
+    font-family: Consolas, Monaco, monospace;
+    font-size: 0.9rem;
+    color: #1a1a1a;
+}
+
+.checklist {
+    margin-bottom: 20px;
+}
+
+.checklist ul {
+    margin-top: 8px;
+    padding-left: 20px;
+}
+
+.checklist li {
+    font-size: 0.95rem;
+    color: #4a5568;
+    margin-bottom: 6px;
+}
+
+.important-note {
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+    padding: 15px 20px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.important-note a {
+    color: #981e32;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   (News)
+   ========================================== */
+
+.news-page-intro {
+    font-size: 1.1rem;
+    color: #5e6a71;
+    margin-bottom: 35px;
+    max-width: 900px;
+}
+
+.news-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 950px;
+}
+
+/* Tarjeta amplia de Noticia */
+.news-card {
+    background-color: #f8f9fa;
+    border-left: 4px solid #981e32; /* Carmesí WSU */
+    padding: 22px 28px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.news-card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.news-card-date {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #5e6a71;
+}
+
+/* Insignias/Badges de Tipo de Noticia */
+.news-badge {
+    padding: 3px 9px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border-radius: 4px;
+    color: #ffffff;
+}
+
+.news-badge.new-member {
+    background-color: #5e6a71; /* Gris WSU */
+}
+
+.news-badge.paper {
+    background-color: #981e32; /* Carmesí WSU */
+}
+
+.news-badge.talk {
+    background-color: #2b6cb0; /* Azul académico */
+}
+
+.news-badge.grant {
+    background-color: #2f855a; /* Verde logro */
+}
+
+.news-card h3 {
+    font-size: 1.25rem;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.news-card p {
+    font-size: 0.96rem;
+    color: #4a5568;
+    line-height: 1.55;
+}
