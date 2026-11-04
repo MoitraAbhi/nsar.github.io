@@ -5,6 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>People | NSAR Lab | Washington State University</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .profile-card {
+            display: grid;
+            grid-template-columns: 112px minmax(0, 1fr);
+            gap: 20px;
+            align-items: start;
+            padding: 22px;
+            background: #f8f9fa;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+        }
+
+        .profile-card.director { grid-column: 1 / -1; }
+
+        .profile-photo {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            border-radius: 7px;
+            object-fit: cover;
+            object-position: center 35%;
+        }
+
+        .profile-photo.placeholder {
+            display: grid;
+            place-items: center;
+            border: 1px solid #dce2e7;
+            background: #edf0f2;
+            color: #4a5568;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        .profile-details h3 {
+            margin-bottom: 4px;
+            color: #1a1a1a;
+            font-size: 1.23rem;
+            line-height: 1.25;
+        }
+
+        .profile-role {
+            margin-bottom: 10px;
+            color: #981e32;
+            font-weight: 650;
+            font-size: 0.88rem;
+            line-height: 1.4;
+        }
+
+        .profile-note {
+            margin: -4px 0 10px;
+            color: #374151;
+            font-size: 0.88rem;
+        }
+
+        .profile-info dt {
+            margin-top: 9px;
+            color: #374151;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        .profile-info dd {
+            margin: 1px 0 0;
+            color: #4a5568;
+            font-size: 0.94rem;
+            line-height: 1.55;
+        }
+
+        .profile-info .profile-bio p + p { margin-top: 8px; }
+        .profile-info .bio-placeholder {
+            min-block-size: 2.7em;
+            color: #5e6a71;
+            font-style: italic;
+        }
+
+        @media (max-width: 960px) {
+            .people-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 500px) {
+            .profile-card { grid-template-columns: 70px minmax(0, 1fr); gap: 13px; padding: 15px; }
+            .profile-details h3 { font-size: 1.07rem; }
+            .profile-photo.placeholder { font-size: 0.87rem; }
+        }
+    </style>
 </head>
 <body>
 
@@ -20,7 +113,7 @@
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="people.html">People</a></li>
+                <li><a href="people.html" class="active" aria-current="page">People</a></li>
                 <li><a href="research.html">Research</a></li>
                 <li><a href="publications.html">Publications</a></li>
                 <li><a href="news.html">News</a></li>
@@ -40,69 +133,155 @@
     <main class="main-content">
         <h1 class="page-title">People</h1>
 
-        
-        <section class="pi-section">
-            <div class="pi-card">
-                <img src="./images/AbhishekMoitra.jpeg" alt="Abhishek Moitra" class="pi-photo">
-                <div class="pi-info">
-                    <h2>Abhishek Moitra</h2>
-                    <p class="pi-role">Lab Director / Assistant Professor, Washington State University</p>
-                    <p class="pi-bio">
-                        Abhishek Moitra directs the Lab at Washington State University. His research focuses on 
-                        Computer Architecture, hardware-software algorithm codesign, embedded systems, 
-                        HMIMO surfaces, and reliable systems design for emerging workloads.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <hr class="divider">
-
-        
-        <section class="group-section">
-            <h2>Ph.D. Students</h2>
-            <div class="student-grid">
-                <article class="student-card-vertical">
-                    <img src="./images/sample.jpg" alt="Ph.D. Student" class="student-photo-vertical">
-                    <div class="student-info-vertical">
-                        <h3>Name Surname</h3>
-                        <p class="role">Ph.D. Student in CS</p>
-                        <p class="bio">Researching hardware-software codesign and embedded systems.</p>
+        <section class="group-section" aria-labelledby="lab-director">
+            <h2 id="lab-director">Lab Director</h2>
+            <div class="people-grid">
+                <article class="profile-card director">
+                    <img class="profile-photo" src="images/AbhishekMoitra.jpeg" alt="Abhishek Moitra" width="112" height="140">
+                    <div class="profile-details">
+                        <h3>Abhishek Moitra</h3>
+                        <p class="profile-role">Assistant Professor · Washington State University</p>
+                        <dl class="profile-info">
+                            <dt>Research interests</dt>
+                            <dd>Hardware and algorithm co-design, neuromorphic computing, compute-in-memory, and large language model optimization</dd>
+                            <dt>Bio</dt>
+                            <dd class="profile-bio">
+                                <p>Abhishek Moitra earned his B.E. at BITS Pilani’s Goa campus and completed his M.S. and Ph.D. at Yale University. He joined Washington State University’s School of Electrical Engineering and Computer Science as an assistant professor in 2025. He is a member of IEEE.</p>
+                                <p>His research combines hardware and algorithm design to improve the performance and energy efficiency of machine learning systems, with an emphasis on neuromorphic computing. His work has appeared at MLSys and DAC and in IEEE TCAD and Applied Physics Reviews. He received the 2025 IEEE TCAD Donald O. Pederson Best Paper Award and the 2024 Bell Labs Outstanding Innovation Award.</p>
+                            </dd>
+                        </dl>
                     </div>
                 </article>
             </div>
         </section>
 
-        
-        <section class="group-section">
-            <h2>Master's Students</h2>
-            <div class="student-grid">
-                <article class="student-card-vertical">
-                    <img src="./images/sample.jpg" alt="Master Student" class="student-photo-vertical">
-                    <div class="student-info-vertical">
-                        <h3>Name Surname</h3>
-                        <p class="role">M.S. Student in CE</p>
-                        <p class="bio">Focusing on HMIMO surfaces and reliable architectures.</p>
+        <section class="group-section" aria-labelledby="phd-students">
+            <h2 id="phd-students">Ph.D. Students</h2>
+            <div class="people-grid">
+                <article class="profile-card">
+                    <div class="profile-photo placeholder" aria-hidden="true">A</div>
+                    <div class="profile-details">
+                        <h3>Anubab</h3>
+                        <p class="profile-role">Ph.D. Student</p>
+                        <dl class="profile-info">
+                            <dt>Research interests</dt>
+                            <dd>Compiler design and design space exploration</dd>
+                            <dt>Bio</dt>
+                            <dd class="profile-bio bio-placeholder">Bio forthcoming.</dd>
+                        </dl>
+                    </div>
+                </article>
+
+                <article class="profile-card">
+                    <div class="profile-photo placeholder" aria-hidden="true">RI</div>
+                    <div class="profile-details">
+                        <h3>Ram S Iyer</h3>
+                        <p class="profile-role">Ph.D. Student</p>
+                        <dl class="profile-info">
+                            <dt>Research interests</dt>
+                            <dd>Machine learning algorithm design</dd>
+                            <dt>Bio</dt>
+                            <dd class="profile-bio bio-placeholder">Bio forthcoming.</dd>
+                        </dl>
+                    </div>
+                </article>
+
+                <article class="profile-card">
+                    <div class="profile-photo placeholder" aria-hidden="true">PP</div>
+                    <div class="profile-details">
+                        <h3>Pramit Kumar Pal</h3>
+                        <p class="profile-role">Ph.D. Student</p>
+                        <p class="profile-note">Co-advised with Prof. Partha Pande.</p>
+                        <dl class="profile-info">
+                            <dt>Research interests</dt>
+                            <dd>Chiplet-based heterogeneous integration</dd>
+                            <dt>Bio</dt>
+                            <dd class="profile-bio bio-placeholder">Bio forthcoming.</dd>
+                        </dl>
+                    </div>
+                </article>
+
+                <article class="profile-card">
+                    <div class="profile-photo placeholder" aria-hidden="true">Photo</div>
+                    <div class="profile-details">
+                        <h3>Ph.D. Student</h3>
+                        <p class="profile-role">Profile forthcoming</p>
+                        <dl class="profile-info">
+                            <dt>Research interests</dt>
+                            <dd>To be added.</dd>
+                            <dt>Bio</dt>
+                            <dd class="profile-bio bio-placeholder">Bio forthcoming.</dd>
+                        </dl>
                     </div>
                 </article>
             </div>
         </section>
 
-        
-        <section class="group-section">
-            <h2>Undergraduate Students</h2>
-            <div class="student-grid">
-                <article class="student-card-vertical">
-                    <img src="./images/GuillermoAstillero.jpeg" alt="Guillermo Astillero Sanchez" class="student-photo-vertical">
-                    <div class="student-info-vertical">
+        <section class="group-section" aria-labelledby="masters-students">
+            <h2 id="masters-students">Master’s Students</h2>
+            <div class="people-grid">
+                <article class="profile-card">
+                    <div class="profile-photo placeholder" aria-hidden="true">GH</div>
+                    <div class="profile-details">
+                        <h3>Gerald Hoff</h3>
+                        <p class="profile-role">Master’s Student</p>
+                        <dl class="profile-info">
+                            <dt>Research interests</dt>
+                            <dd>GPU kernel optimization</dd>
+                            <dt>Bio</dt>
+                            <dd class="profile-bio bio-placeholder">Bio forthcoming.</dd>
+                        </dl>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="group-section" aria-labelledby="undergraduate-researchers">
+            <h2 id="undergraduate-researchers">Undergraduate Researchers</h2>
+            <div class="people-grid">
+                <article class="profile-card">
+                    <div class="profile-photo placeholder" aria-hidden="true">AV</div>
+                    <div class="profile-details">
+                        <h3>Adryen Valdez</h3>
+                        <p class="profile-role">Undergraduate Researcher</p>
+                        <dl class="profile-info">
+                            <dt>Research interests</dt>
+                            <dd>Device fabrication and characterization</dd>
+                            <dt>Bio</dt>
+                            <dd class="profile-bio bio-placeholder">Bio forthcoming.</dd>
+                        </dl>
+                    </div>
+                </article>
+
+                <article class="profile-card">
+                    <img class="profile-photo" src="images/GuillermoAstillero.jpeg" alt="Guillermo Astillero Sanchez" width="112" height="140">
+                    <div class="profile-details">
                         <h3>Guillermo Astillero Sanchez</h3>
-                        <p class="role">Undergraduate Researcher</p>
-                        <p class="bio">Focusing on web technologies, HTML/CSS development, and computer architecture.</p>
+                        <p class="profile-role">International Visiting Undergraduate Researcher</p>
+                        <dl class="profile-info">
+                            <dt>Research interests</dt>
+                            <dd>Vision-language-action (VLA) model optimization and compiler design</dd>
+                            <dt>Bio</dt>
+                            <dd class="profile-bio bio-placeholder">Bio forthcoming.</dd>
+                        </dl>
+                    </div>
+                </article>
+
+                <article class="profile-card">
+                    <div class="profile-photo placeholder" aria-hidden="true">JH</div>
+                    <div class="profile-details">
+                        <h3>Jordan Nguyen-Vo Herbert</h3>
+                        <p class="profile-role">Undergraduate Researcher</p>
+                        <dl class="profile-info">
+                            <dt>Research interests</dt>
+                            <dd>Vision-language-action (VLA) model optimization</dd>
+                            <dt>Bio</dt>
+                            <dd class="profile-bio bio-placeholder">Bio forthcoming.</dd>
+                        </dl>
                     </div>
                 </article>
             </div>
         </section>
-
     </main>
 
     <footer class="footer">
