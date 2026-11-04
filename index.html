@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | LabName Website</title>
+    <title>Home | NSAR Lab | Washington State University</title>
+    <meta name="description" content="The NSAR Lab at Washington State University co-optimizes devices, architectures, and algorithms for energy-efficient, scalable computing systems.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,11 +16,11 @@
         
         <div class="nav-left">
             <div class="logo">
-                <span class="lab-title">LabName</span>
+                <span class="lab-title" title="Nanoscale Systems Architecture Research Lab">NSAR</span>
                 <span class="uni-title">WASHINGTON STATE UNIVERSITY</span>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
                 <li><a href="people.html">People</a></li>
                 <li><a href="research.html">Research</a></li>
                 <li><a href="publications.html">Publications</a></li>
@@ -38,7 +39,7 @@
 
     
     <main class="main-content">
-        <h1 class="page-title">Welcome to LabName</h1>
+        <h1 class="page-title home-title">Nanoscale Systems Architecture Research Lab</h1>
 
         
         <div class="home-layout">
@@ -49,33 +50,14 @@
                     <h2 class="section-heading">About Us</h2>
                     <div class="home-intro">
                         <p class="intro-text">
-                            Our lab is located at <strong>Washington State University (WSU)</strong>. We focus on Computer Architecture related areas such as hardware-software algorithm codesign, embedded systems, HMIMO surfaces, and reliable systems.
+                            The <strong>NSAR Lab</strong> at <strong>Washington State University</strong> develops energy-efficient, scalable computing systems through <strong>device–architecture–algorithm co-optimization</strong>. We connect the physical capabilities of emerging devices with hardware architectures and computational methods, jointly optimizing computation, memory, sensing, and communication.
                         </p>
                         <p>
-                            Explore our research initiatives, meet our team members, or check out our recent publications using the navigation menu above.
+                            Our research spans neuromorphic and in-sensor computing, heterogeneous chiplet systems, and intelligent edge platforms, translating nanoscale device advances into improvements in system performance, adaptability, and energy efficiency.
                         </p>
                     </div>
                 </section>
 
-                <section class="home-section">
-                    <h2 class="section-heading">Latest News</h2>
-                    <div class="news-list">
-                        <article class="news-item">
-                            <span class="news-date">Oct 2026</span>
-                            <p class="news-text">Guillermo Astillero joined the lab as an Undergraduate Researcher. Welcome!</p>
-                        </article>
-
-                        <article class="news-item">
-                            <span class="news-date">Sep 2026</span>
-                            <p class="news-text">Our new paper on hardware-software algorithm codesign has been accepted for publication.</p>
-                        </article>
-
-                        <article class="news-item">
-                            <span class="news-date">Aug 2026</span>
-                            <p class="news-text">Abhishek Moitra gave a talk on HMIMO surfaces and reliable computing architectures at WSU.</p>
-                        </article>
-                    </div>
-                </section>
             </div>
 
 
@@ -88,13 +70,42 @@
             </div>
 
         </div>
+        <section class="collaborators-section" aria-labelledby="collaborators-heading">
+            <h2 class="section-heading" id="collaborators-heading">Collaborators</h2>
+            <div class="collaborator-grid">
+                <a class="collaborator" href="https://www.amd.com/">
+                    <span class="collaborator-logo"><img class="logo-amd" src="images/collaborators/amd.svg" alt="" width="140" height="34"></span>
+                    <span class="collaborator-name">AMD</span>
+                </a>
+                <a class="collaborator" href="https://www.intel.com/">
+                    <span class="collaborator-logo"><img class="logo-intel" src="images/collaborators/intel.png" alt="" title="Intel logo © Intel Corporation"></span>
+                    <span class="collaborator-name">Intel</span>
+                </a>
+                <a class="collaborator" href="https://www.nokia.com/bell-labs/">
+                    <span class="collaborator-logo"><img class="logo-nokia" src="images/collaborators/nokia-bell-labs.svg" alt="" width="82" height="40"></span>
+                    <span class="collaborator-name">Nokia Bell Labs</span>
+                </a>
+                <a class="collaborator" href="https://www.purdue.edu/">
+                    <span class="collaborator-logo"><img class="logo-purdue" src="images/collaborators/purdue.svg" alt=""></span>
+                    <span class="collaborator-name">Purdue University</span>
+                </a>
+                <a class="collaborator" href="https://www.rpi.edu/">
+                    <span class="collaborator-logo"><img class="logo-rpi" src="images/collaborators/rpi.svg" alt="" width="500" height="302"></span>
+                    <span class="collaborator-name">Rensselaer Polytechnic Institute</span>
+                </a>
+                <a class="collaborator" href="https://twin-cities.umn.edu/">
+                    <span class="collaborator-logo"><img class="logo-minnesota" src="images/collaborators/minnesota.png" alt="" width="190" height="190"></span>
+                    <span class="collaborator-name">University of Minnesota</span>
+                </a>
+            </div>
+        </section>
     </main>
 
     
     <footer class="footer">
         <div class="footer-container">
-            <h3 class="footer-title">LabName</h3>
-            <p class="footer-slogan">Computer Architecture and Intelligent Systems</p>
+            <h3 class="footer-title">Nanoscale Systems Architecture Research Lab</h3>
+            <p class="footer-slogan">Device–Architecture–Algorithm Co-Optimization</p>
             <p>School of Electrical Engineering and Computer Science</p>
             <p>Washington State University</p>
             <p>Pullman, WA 99164</p>
